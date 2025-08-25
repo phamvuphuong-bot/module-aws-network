@@ -93,14 +93,12 @@ resource "aws_route_table_association" "public-b-association" {
   route_table_id = aws_route_table.public-route.id
 }
 
-resource "aws_eip" "nat-a" {
-  vpc = true
+resource "aws_eip" "nat-a" { 
   tags = {
     "Name" = "${local.vpc_name}-NAT-a"
   }
 }
-resource "aws_eip" "nat-b" {
-  vpc = true
+resource "aws_eip" "nat-b" {  
   tags = {
     "Name" = "${local.vpc_name}-NAT-b"
   }
